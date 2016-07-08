@@ -20,6 +20,10 @@ This repository contains **Dockerfile** of [Redis](http://redis.io/) for [Docker
 
 ### Usage
 
+### Build `redis-server`
+
+    docker build -t frank4000/redis:1.2 .
+
 #### Run `redis-server`
 
     docker run -d --name redis -p 6379:6379 dockerfile/redis
@@ -31,6 +35,10 @@ This repository contains **Dockerfile** of [Redis](http://redis.io/) for [Docker
 #### Run `redis-server` with persistent data directory and password.
 
     docker run -d -p 6379:6379 -v <data-dir>:/data --name redis dockerfile/redis redis-server /etc/redis/redis.conf --requirepass <password>
+
+#### Run `redis-server` with persistent data directory and password.
+
+     docker run -p 6379:6379 -v /root/redis-data:/data -d frank4000/redis:1.2
 
 #### Run `redis-cli`
 
